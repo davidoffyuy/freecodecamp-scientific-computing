@@ -1,0 +1,8 @@
+INSERT INTO Artist(name) Values("Rihanna");
+INSERT INTO Artist(name) Values("Taylor Swift");
+
+INSERT INTO Album(title, artist_id) Values("Loud", 1);
+INSERT INTO Album(title, artist_id) Values("Fearless", 2);
+
+INSERT INTO Track(name, album_id, genre_id, len, rating, count)
+    Values("Raining Men", 1, )

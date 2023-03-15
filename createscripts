@@ -1,0 +1,28 @@
+CREATE TABLE "Artist"(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+);
+
+CREATE TABLE "Genre"(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+);
+
+CREATE TABLE "Album"(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    artist_id INTEGER NOT NULL,
+    FOREIGN KEY(artist_id) REFERENCES Artist(id)
+);
+
+CREATE TABLE "Track"(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    album_id INTEGER NOT NULL,
+    genre_id INTEGER NOT NULL,
+    len INTEGER,
+    rating INTEGER,
+    count INTEGER,
+    FOREIGN KEY(album_id) REFERENCES Album(id),
+    FOREIGN KEY(genre_id) REFERENCES Genre(id)
+);
